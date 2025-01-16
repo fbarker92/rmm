@@ -46,4 +46,3 @@ Try
     } else {
         Write-Output "Unable to connect to server"
     }
-}
