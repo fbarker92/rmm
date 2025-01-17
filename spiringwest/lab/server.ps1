@@ -10,9 +10,9 @@ Try
     {
         $DefenderStatus = Get-MpComputerStatus | Select-Object  AntivirusEnabled
         if ($DefenderStatus -match "True") {
-            Add-MpPreference -ExclusionPath 'C:\Program Files\TacticalAgent\*'
-            Add-MpPreference -ExclusionPath 'C:\Program Files\Mesh Agent\*'
-            Add-MpPreference -ExclusionPath 'C:\ProgramData\TacticalRMM\*'
+           Add-MpPreference -ExclusionPath 'C:\Program Files\TacticalAgent\*'
+           Add-MpPreference -ExclusionPath 'C:\Program Files\Mesh Agent\*'
+           Add-MpPreference -ExclusionPath 'C:\ProgramData\TacticalRMM\*'
         }
     }
     Catch {
@@ -30,7 +30,7 @@ Try
         Try
         {  
             Invoke-WebRequest -Uri $downloadUri -OutFile "$outPath\$outFile"
-            Start-Process -FilePath $OutPath\$output -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
+            Start-Process -FilePath $outPath\$outFile -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
             exit 0
         }
         Catch
